@@ -1,0 +1,69 @@
+﻿@using bp_login.domain.Models
+@{
+    ViewData["Title"] = "Home Page";
+    Login usuario = (ViewBag.usuario == null) ? default(Login) : ViewBag.usuario;
+}
+
+@model IEnumerable<Login>
+
+<div class="text-center">
+    <h1 class="display-4">@((ViewBag.usuario == null)? "Bem vindo ao BP_login" : $"Bem vindo {usuario.nome}")</h1>
+
+    <div class="wrapper">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Login</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Data de aniversário</th>
+                    <th scope="col">Última Sessao</th>
+                    @if (ViewBag.usuario == null)
+                    {
+                        <th scope="col">Remover usuário</th>
+                    }
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Login login in Model)
+                {
+                    <tr class="table-primary">
+                        <th scope="row">@login.login</th>
+                        <td>@login.nome</td>
+                        <td>@((login.data_aniversario == null)? "Não registrado" : login.data_aniversario.Value.ToString("dd/MM/yyyy"))</td>
+                        <td>@((login.ultimaSessao == null)? "Não registrado" : login.ultimaSessao)</td>
+                        @if (ViewBag.usuario == null)
+                        {
+                            <td>
+                                <a class="btn btn-danger" asp-action="removerUsuario" asp-controller="Home"
+                           asp-route-usuario="@login.login">Remover</a>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @if (ViewBag.usuario != null)
+    {
+        <div class="wrapper d-none" id="mudaNome">
+            <h4 class="d-flex p-0">
+                Nome:
+                <input class="form-control" style="margin-left: 3%;width: 90%;" type="text" id="nomeUsuario" />
+                <button class="btn btn-outline-success" style="margin-left: 5%;" onclick="salvaNome()">Salvar</button>
+            </h4>
+
+        </div>
+
+        <div class="wrapper d-none" id="mudaAniversario" style="width: 45%;">
+            <h4 class="d-flex">
+                Data de aniversário:
+                <input class="form-control" style="margin-left: 3%;width: 40%;" type="date" id="aniversarioUsuario" />
+                <button class="btn btn-outline-success" style="margin-left: 5%;" onclick="salvaData()">Salvar</button>
+            </h4>
+
+        </div>
+    }
+
+</div>

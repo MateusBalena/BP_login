@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - bp_login</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/bp_login.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-action="Index" asp-controller="Home">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav me-auto">
+                        @if (ViewBag.usuario == null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link active" asp-action="registraUsuario" asp-controller="Home">
+                                    Se Regisrar
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
+                            </li>
+                        }
+                        @if (ViewBag.usuario != null)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Alterar</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" style="cursor: pointer;" onclick="alteraNome()">Nome</a>
+                                    <a class="dropdown-item" style="cursor: pointer;" onclick="alteraData()">Data de aniversário</a>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                    @if (ViewBag.usuario == null)
+                    {
+                        <form class="d-flex">
+                            <input class="form-control me-sm-2" type="text" placeholder="Login" id="loginUsuario">
+                            <input class="form-control me-sm-2" type="password" placeholder="Senha" id="senhaUsuario">
+                            <button class="btn btn-secondary my-2 my-sm-0" onclick="logaUsuario()">Login</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a class="btn btn-outline-danger"
+                       asp-action="deslogaUsuario"
+                       asp-controller="Home"
+                       style="margin-right: 2%">Sair</a>
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/alteraUsuario.js" asp-append-version="true"></script>
+    <script src="~/js/registroUsuario.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

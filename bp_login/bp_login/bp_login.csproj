@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\js\iwljvu2x.gkl~" />
+    <Content Remove="wwwroot\js\registroUsuario.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\js\registroUsuario.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\registroUsuario.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\bp_login.data\bp_login.data.csproj" />
+    <ProjectReference Include="..\bp_login.domain\bp_login.domain.csproj" />
+  </ItemGroup>
+
+</Project>

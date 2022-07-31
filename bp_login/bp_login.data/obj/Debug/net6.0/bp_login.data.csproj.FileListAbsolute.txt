@@ -1,0 +1,15 @@
+D:\BANPARA_repo\bp_login\bp_login.data\bin\Debug\net6.0\bp_login.data.deps.json
+D:\BANPARA_repo\bp_login\bp_login.data\bin\Debug\net6.0\bp_login.data.dll
+D:\BANPARA_repo\bp_login\bp_login.data\bin\Debug\net6.0\bp_login.data.pdb
+D:\BANPARA_repo\bp_login\bp_login.data\bin\Debug\net6.0\bp_login.domain.dll
+D:\BANPARA_repo\bp_login\bp_login.data\bin\Debug\net6.0\bp_login.domain.pdb
+D:\BANPARA_repo\bp_login\bp_login.data\obj\Debug\net6.0\bp_login.data.csproj.AssemblyReference.cache
+D:\BANPARA_repo\bp_login\bp_login.data\obj\Debug\net6.0\bp_login.data.GeneratedMSBuildEditorConfig.editorconfig
+D:\BANPARA_repo\bp_login\bp_login.data\obj\Debug\net6.0\bp_login.data.AssemblyInfoInputs.cache
+D:\BANPARA_repo\bp_login\bp_login.data\obj\Debug\net6.0\bp_login.data.AssemblyInfo.cs
+D:\BANPARA_repo\bp_login\bp_login.data\obj\Debug\net6.0\bp_login.data.csproj.CoreCompileInputs.cache
+D:\BANPARA_repo\bp_login\bp_login.data\obj\Debug\net6.0\bp_login.data.csproj.CopyComplete
+D:\BANPARA_repo\bp_login\bp_login.data\obj\Debug\net6.0\bp_login.data.dll
+D:\BANPARA_repo\bp_login\bp_login.data\obj\Debug\net6.0\refint\bp_login.data.dll
+D:\BANPARA_repo\bp_login\bp_login.data\obj\Debug\net6.0\bp_login.data.pdb
+D:\BANPARA_repo\bp_login\bp_login.data\obj\Debug\net6.0\ref\bp_login.data.dll
